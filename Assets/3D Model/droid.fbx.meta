@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: 7e5ec85a7760a1144a6d0c3f3d9c1951
+timeCreated: 1513506333
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm.L
+    100002: Arm.L 1
+    100004: Arm.R
+    100006: Arm.R 1
+    100008: Armature
+    100010: Base
+    100012: Camera
+    100014: //RootNode
+    100016: Eye
+    100018: Finger11.L
+    100020: Finger11.R
+    100022: Finger12.L
+    100024: Finger12.R
+    100026: Finger13.L
+    100028: Finger13.L_end
+    100030: Finger13.R
+    100032: Finger13.R_end
+    100034: Finger21.L
+    100036: Finger21.R
+    100038: Finger22.L
+    100040: Finger22.R
+    100042: Finger23.L
+    100044: Finger23.L_end
+    100046: Finger23.R
+    100048: Finger23.R_end
+    100050: Finger31.L
+    100052: Finger31.R
+    100054: Finger32.L
+    100056: Finger32.R
+    100058: Finger33.L
+    100060: Finger33.L_end
+    100062: Finger33.R
+    100064: Finger33.R_end
+    100066: Finger41.L
+    100068: Finger41.R
+    100070: Finger42.L
+    100072: Finger42.R
+    100074: Finger43.L
+    100076: Finger43.L_end
+    100078: Finger43.R
+    100080: Finger43.R_end
+    100082: Finger51.L
+    100084: Finger51.R
+    100086: Finger52.L
+    100088: Finger52.R
+    100090: Finger53.L
+    100092: Finger53.L_end
+    100094: Finger53.R
+    100096: Finger53.R_end
+    100098: Foot.L
+    100100: Foot.L 1
+    100102: Foot.L_end
+    100104: Foot.R
+    100106: Foot.R 1
+    100108: Foot.R_end
+    100110: ForeArm.L
+    100112: ForeArm.R
+    100114: Gun
+    100116: Hand.L
+    100118: Hand.L 1
+    100120: Hand.R
+    100122: Hand.R 1
+    100124: Head
+    100126: Higher Leg.L
+    100128: Higher Leg.L 1
+    100130: Higher Leg.R
+    100132: Higher Leg.R 1
+    100134: Lamp
+    100136: Lower Leg.L
+    100138: Lower Leg.L 1
+    100140: Lower Leg.R
+    100142: Lower Leg.R 1
+    100144: Neck
+    100146: Neck_end
+    100148: Pelvis
+    100150: Torso
+    100152: Torso 1
+    400000: Arm.L
+    400002: Arm.L 1
+    400004: Arm.R
+    400006: Arm.R 1
+    400008: Armature
+    400010: Base
+    400012: Camera
+    400014: //RootNode
+    400016: Eye
+    400018: Finger11.L
+    400020: Finger11.R
+    400022: Finger12.L
+    400024: Finger12.R
+    400026: Finger13.L
+    400028: Finger13.L_end
+    400030: Finger13.R
+    400032: Finger13.R_end
+    400034: Finger21.L
+    400036: Finger21.R
+    400038: Finger22.L
+    400040: Finger22.R
+    400042: Finger23.L
+    400044: Finger23.L_end
+    400046: Finger23.R
+    400048: Finger23.R_end
+    400050: Finger31.L
+    400052: Finger31.R
+    400054: Finger32.L
+    400056: Finger32.R
+    400058: Finger33.L
+    400060: Finger33.L_end
+    400062: Finger33.R
+    400064: Finger33.R_end
+    400066: Finger41.L
+    400068: Finger41.R
+    400070: Finger42.L
+    400072: Finger42.R
+    400074: Finger43.L
+    400076: Finger43.L_end
+    400078: Finger43.R
+    400080: Finger43.R_end
+    400082: Finger51.L
+    400084: Finger51.R
+    400086: Finger52.L
+    400088: Finger52.R
+    400090: Finger53.L
+    400092: Finger53.L_end
+    400094: Finger53.R
+    400096: Finger53.R_end
+    400098: Foot.L
+    400100: Foot.L 1
+    400102: Foot.L_end
+    400104: Foot.R
+    400106: Foot.R 1
+    400108: Foot.R_end
+    400110: ForeArm.L
+    400112: ForeArm.R
+    400114: Gun
+    400116: Hand.L
+    400118: Hand.L 1
+    400120: Hand.R
+    400122: Hand.R 1
+    400124: Head
+    400126: Higher Leg.L
+    400128: Higher Leg.L 1
+    400130: Higher Leg.R
+    400132: Higher Leg.R 1
+    400134: Lamp
+    400136: Lower Leg.L
+    400138: Lower Leg.L 1
+    400140: Lower Leg.R
+    400142: Lower Leg.R 1
+    400144: Neck
+    400146: Neck_end
+    400148: Pelvis
+    400150: Torso
+    400152: Torso 1
+    2300000: Arm.L 1
+    2300002: Arm.R 1
+    2300004: Eye
+    2300006: Foot.L 1
+    2300008: Foot.R 1
+    2300010: Gun
+    2300012: Head
+    2300014: Higher Leg.L 1
+    2300016: Higher Leg.R 1
+    2300018: Lower Leg.L 1
+    2300020: Lower Leg.R 1
+    2300022: Pelvis
+    2300024: Torso 1
+    3300000: Arm.L 1
+    3300002: Arm.R 1
+    3300004: Eye
+    3300006: Foot.L 1
+    3300008: Foot.R 1
+    3300010: Gun
+    3300012: Head
+    3300014: Higher Leg.L 1
+    3300016: Higher Leg.R 1
+    3300018: Lower Leg.L 1
+    3300020: Lower Leg.R 1
+    3300022: Pelvis
+    3300024: Torso 1
+    4300000: Pelvis
+    4300002: Torso
+    4300004: Arm.L
+    4300006: Head
+    4300008: Eye
+    4300010: Gun
+    4300012: Higher Leg.L
+    4300014: Lower Leg.L
+    4300016: Foot.L
+    4300018: Hand.L
+    4300020: Hand.R
+    7400000: Idle
+    7400002: Run
+    7400004: Shoot
+    9500000: //RootNode
+    13700000: Hand.L
+    13700002: Hand.R
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Base
+        weight: 1
+      - path: Armature/Base/Higher Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Higher Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Lower Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Higher Leg.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Lower Leg.R 1
+        weight: 1
+      - path: Armature/Base/Pelvis
+        weight: 1
+      - path: Armature/Base/Torso
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/Arm.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L/Finger13.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L/Finger23.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L/Finger33.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L/Finger43.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L/Finger53.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/Arm.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R/Finger13.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R/Finger23.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R/Finger33.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R/Finger43.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R/Finger53.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Gun
+        weight: 1
+      - path: Armature/Base/Torso/Neck
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Eye
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Neck_end
+        weight: 1
+      - path: Armature/Base/Torso/Torso 1
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Hand.L
+        weight: 1
+      - path: Hand.R
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Armature|ArmatureAction
+      firstFrame: 13
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Base
+        weight: 1
+      - path: Armature/Base/Higher Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Higher Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Lower Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Higher Leg.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Lower Leg.R 1
+        weight: 1
+      - path: Armature/Base/Pelvis
+        weight: 1
+      - path: Armature/Base/Torso
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/Arm.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L/Finger13.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L/Finger23.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L/Finger33.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L/Finger43.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L/Finger53.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/Arm.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R/Finger13.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R/Finger23.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R/Finger33.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R/Finger43.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R/Finger53.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Gun
+        weight: 1
+      - path: Armature/Base/Torso/Neck
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Eye
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Neck_end
+        weight: 1
+      - path: Armature/Base/Torso/Torso 1
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Hand.L
+        weight: 1
+      - path: Hand.R
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Shoot
+      takeName: Armature|ArmatureAction
+      firstFrame: 55
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Base
+        weight: 1
+      - path: Armature/Base/Higher Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Higher Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Foot.L/Foot.L_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.L/Lower Leg.L/Lower Leg.L 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Higher Leg.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R 1
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Foot.R/Foot.R_end
+        weight: 1
+      - path: Armature/Base/Higher Leg.R/Lower Leg.R/Lower Leg.R 1
+        weight: 1
+      - path: Armature/Base/Pelvis
+        weight: 1
+      - path: Armature/Base/Torso
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/Arm.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger11.L/Finger12.L/Finger13.L/Finger13.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger21.L/Finger22.L/Finger23.L/Finger23.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger31.L/Finger32.L/Finger33.L/Finger33.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger41.L/Finger42.L/Finger43.L/Finger43.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L
+        weight: 1
+      - path: Armature/Base/Torso/Arm.L/ForeArm.L/Hand.L 1/Finger51.L/Finger52.L/Finger53.L/Finger53.L_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/Arm.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger11.R/Finger12.R/Finger13.R/Finger13.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger21.R/Finger22.R/Finger23.R/Finger23.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger31.R/Finger32.R/Finger33.R/Finger33.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger41.R/Finger42.R/Finger43.R/Finger43.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Finger51.R/Finger52.R/Finger53.R/Finger53.R_end
+        weight: 1
+      - path: Armature/Base/Torso/Arm.R/ForeArm.R/Hand.R 1/Gun
+        weight: 1
+      - path: Armature/Base/Torso/Neck
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Eye
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Head
+        weight: 1
+      - path: Armature/Base/Torso/Neck/Neck_end
+        weight: 1
+      - path: Armature/Base/Torso/Torso 1
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Hand.L
+        weight: 1
+      - path: Hand.R
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
