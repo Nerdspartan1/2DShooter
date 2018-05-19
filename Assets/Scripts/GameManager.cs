@@ -374,9 +374,11 @@ public class GameManager : MonoBehaviour {
 		} else if (tier == 2) {
 			int r = Random.Range (0, tier2.Length);
 			return tier2 [r];
-		} else{
+		} else if(tier == 1){
 			int r= Random.Range(0,tier1.Length);
 			return tier1[r];
+		} else{
+			return null;
 		}
 
 	}

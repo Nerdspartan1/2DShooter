@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class WeaponSwitch : MonoBehaviour {
 
-	public GameObject defaultWeapon;
-	public GameObject equippedWeapon;
+	public GameObject defaultWeaponObject;
+	public GameObject equippedWeaponObject;
 	public Rigidbody equippedWeaponRb;
-	public Gun equippedWeaponGunScr;
+	public Weapon equippedWeapon;
 	public GameObject weaponHolder;
 	public float pickUpRadius=1f;
 	private AimAt aiming;
@@ -18,7 +18,7 @@ public class WeaponSwitch : MonoBehaviour {
 	private Animator anim;
 
 
-	private Text gunNameText;
+	private Text weaponNameText;
 	private Text ammoText;
 
 	private int layerAmount = 2;
@@ -26,19 +26,19 @@ public class WeaponSwitch : MonoBehaviour {
 	void Start ()
 	{
 		Transform canvas = transform.Find("Canvas");
-		gunNameText = canvas.Find("GunNameText").GetComponent<Text>();
+		weaponNameText = canvas.Find("GunNameText").GetComponent<Text>();
 		ammoText = canvas.Find("AmmoText").GetComponent<Text>();
 		anim = GetComponent<Animator>();
 
 		aiming = GetComponent<AimAt> ();
-		if (defaultWeapon != null) {
-			GameObject w = Instantiate(defaultWeapon);
-			w.GetComponent<Gun>().ammo = -1;
+		if (defaultWeaponObject != null) {
+			GameObject w = Instantiate(defaultWeaponObject);
+			w.GetComponent<Weapon>().ammo = -1;
 			w.tag = "Untagged";
-			w.name = defaultWeapon.name;
-			defaultWeapon = w;
-			EquipWeapon(defaultWeapon);
-			defaultWeapon.SetActive(true);
+			w.name = defaultWeaponObject.name;
+			defaultWeaponObject = w;
+			EquipWeapon(defaultWeaponObject);
+			defaultWeaponObject.SetActive(true);
 		}
 		player = GetComponent<Player>();
 
@@ -48,7 +48,7 @@ public class WeaponSwitch : MonoBehaviour {
 		
 		if (equippedWeapon != null) {
 			aiming.looksAtTarget=true;
-			anim.SetLayerWeight (equippedWeaponGunScr.holdingPose, 100);
+			anim.SetLayerWeight (equippedWeapon.holdingPose, 100);
 		}
 		else{
 			Debug.Log("No Weapon !");
@@ -59,8 +59,8 @@ public class WeaponSwitch : MonoBehaviour {
 	void Update ()
 	{
 		if (equippedWeapon != null) {
-			ammoText.text = equippedWeaponGunScr.ammo >= 0 ? equippedWeaponGunScr.ammo.ToString () : "Infinite";
-			if (equippedWeaponGunScr.ammo == 0) {
+			ammoText.text = equippedWeapon.ammo >= 0 ? equippedWeapon.ammo.ToString () : "Infinite";
+			if (equippedWeapon.ammo == 0) {
 				GameObject g;
 				DropWeapon(out g);
 			}
@@ -71,26 +71,26 @@ public class WeaponSwitch : MonoBehaviour {
 	public void DropWeapon (out GameObject droppedWeapon)
 	{
 		droppedWeapon = null;
-		if (equippedWeapon != defaultWeapon) {
+		if (equippedWeaponObject != defaultWeaponObject) {
 			
-			equippedWeapon.transform.parent = null;
-			equippedWeapon.layer =LayerMask.NameToLayer("Prop");
+			equippedWeaponObject.transform.parent = null;
+			equippedWeaponObject.layer =LayerMask.NameToLayer("Prop");
 			equippedWeaponRb.isKinematic = false;
 			equippedWeaponRb.AddForce (player.speed * 40f + transform.forward * 60f + transform.right * 40f * Random.Range (-1f, 1f));
 			equippedWeaponRb.AddTorque (Random.onUnitSphere * 10f);
 			equippedWeaponRb = null;
-			equippedWeaponGunScr.SetOwner((Player)null);
-			equippedWeaponGunScr = null;
-			droppedWeapon = equippedWeapon;
-			equippedWeapon = defaultWeapon;
-			if (equippedWeapon != null) {
-				defaultWeapon.SetActive (true);
-				equippedWeaponRb = defaultWeapon.GetComponent<Rigidbody>();
-				equippedWeaponGunScr = defaultWeapon.GetComponent<Gun>();
-				gunNameText.text = equippedWeaponGunScr.name;
+			equippedWeapon.SetOwner((Player)null);
+			equippedWeapon = null;
+			droppedWeapon = equippedWeaponObject;
+			equippedWeaponObject = defaultWeaponObject;
+			if (equippedWeaponObject != null) {
+				defaultWeaponObject.SetActive (true);
+				equippedWeaponRb = defaultWeaponObject.GetComponent<Rigidbody>();
+				equippedWeapon = defaultWeaponObject.GetComponent<Weapon>();
+				weaponNameText.text = equippedWeapon.name;
 
 			}
-			SetAnimLayer(equippedWeaponGunScr);
+			SetAnimLayer(equippedWeapon);
 		}else
 			Debug.Log("Error : Dropping weapon when none is equipped !");
 	}
@@ -102,7 +102,7 @@ public class WeaponSwitch : MonoBehaviour {
 		colliders = Physics.OverlapSphere (transform.position, pickUpRadius);
 		foreach (Collider col in colliders) {
 			if (col.tag == "Weapon" && col.gameObject !=notThis) {
-				if(col.GetComponent<Gun>().ammo !=0){
+				if(col.GetComponent<Weapon>().ammo !=0){
 					weapon = col.gameObject;
 					break;
 				}
@@ -116,32 +116,32 @@ public class WeaponSwitch : MonoBehaviour {
 	{
 		
 		if (weapon != null) {
-			defaultWeapon.SetActive(false);
-			equippedWeapon = weapon;
-			equippedWeapon.transform.position = weaponHolder.transform.position;
-			equippedWeapon.transform.rotation = weaponHolder.transform.rotation;
-			equippedWeapon.transform.SetParent (weaponHolder.transform);
-			equippedWeapon.layer=LayerMask.NameToLayer("Player");
-			equippedWeaponRb = equippedWeapon.GetComponent<Rigidbody> ();
-			equippedWeaponGunScr = equippedWeapon.GetComponent<Gun> ();
+			defaultWeaponObject.SetActive(false);
+			equippedWeaponObject = weapon;
+			equippedWeaponObject.transform.position = weaponHolder.transform.position;
+			equippedWeaponObject.transform.rotation = weaponHolder.transform.rotation;
+			equippedWeaponObject.transform.SetParent (weaponHolder.transform);
+			equippedWeaponObject.layer=LayerMask.NameToLayer("Player");
+			equippedWeaponRb = equippedWeaponObject.GetComponent<Rigidbody> ();
+			equippedWeapon = equippedWeaponObject.GetComponent<Weapon> ();
 			equippedWeaponRb.isKinematic = true;
-			equippedWeaponGunScr.SetOwner(GetComponent<Player>());
+			equippedWeapon.SetOwner(GetComponent<Player>());
 
-			gunNameText.text = equippedWeaponGunScr.name;
-			SetAnimLayer(equippedWeaponGunScr);
+			weaponNameText.text = equippedWeapon.name;
+			SetAnimLayer(equippedWeapon);
 			return true;
 		}else return false;
 		
 
 	}
 
-	public void SetAnimLayer (Gun gun)
+	public void SetAnimLayer (Weapon weapon)
 	{
 		for (int i = 1; i <= layerAmount; i++) {
 			anim.SetLayerWeight (i, 0);
 		}
-		if (gun !=null) {
-				anim.SetLayerWeight (gun.holdingPose, 100);
+		if (weapon !=null) {
+				anim.SetLayerWeight (weapon.holdingPose, 100);
 				aiming.looksAtTarget = true;
 		} else {
 				aiming.looksAtTarget = false;

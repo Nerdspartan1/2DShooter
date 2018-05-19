@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Unit : MonoBehaviour {
 
-	protected float maxHp = 100;
+	[HideInInspector] public float maxHp = 100;
 	public float hp = 100;
 	public bool ragdollUponDeath = false;
 

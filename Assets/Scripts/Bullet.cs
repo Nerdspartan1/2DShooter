@@ -11,9 +11,9 @@ public class Bullet : MonoBehaviour {
 	private int nbHit=0;
 
 	public GameObject impactEffect;
-	new private Collider collider;
+	new protected Collider collider;
 	public LayerMask impactEffectOn;
-	private Vector3 startPosition;
+	protected Vector3 startPosition;
 	void Start ()
 	{
 		collider = GetComponent<Collider>();

@@ -20,8 +20,6 @@ public class Player : Unit {
 	public float maxSpeed;
 	public float jumpSpeed;
 	public float gravity;
-
-
 	private bool isGrounded;
 	private bool wasGroundedLastFrame;
 
@@ -34,12 +32,12 @@ public class Player : Unit {
 	private bool inBulletTime = false;
 	private IEnumerator bulletTime;
 
-
-	private float nextTimeToFire = 0f;
+	private bool canShoot = true;
 	public GameObject shootingPivot;
 	private GameObject bulletStart;
 
 	public GameObject compass;
+
 
 
 
@@ -55,9 +53,9 @@ public class Player : Unit {
 		controller = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator> ();
 		aiming = GetComponent<AimAt> ();
-		bulletStart=shootingPivot.transform.FindChild("BulletStart").gameObject;
+		bulletStart=shootingPivot.transform.Find("BulletStart").gameObject;
 		if(bulletStart == null)	Debug.Log("Error : BulletStart not found !");
-		aiming.planePos = Vector3.Project(bulletStart.transform.position,Vector3.up);
+		aiming.planePos = Vector3.Project(bulletStart.transform.position-transform.position,Vector3.up);
 		weaponSwitch = GetComponent<WeaponSwitch> ();
 
 		healthBarImage = transform.Find("Canvas/HealthBarBG/HealthBar").GetComponent<Image>();
@@ -153,18 +151,17 @@ public class Player : Unit {
 		Debug.DrawRay (shootingPivot.transform.position, aiming.TrueAimDir ());
 
 		//Feu
-		if (weaponSwitch.equippedWeapon != null && Time.time >= nextTimeToFire) {
-			if ((weaponSwitch.equippedWeaponGunScr.automatic && Input.GetButton ("Fire1")) || Input.GetButtonDown ("Fire1")) {
-				if (weaponSwitch.equippedWeaponGunScr.Shoot (bulletStart.transform.position, aiming.aimPos)) {
-					anim.SetTrigger ("shoots");
-					nextTimeToFire = Time.time + 1 / weaponSwitch.equippedWeaponGunScr.fireRate;
-					mainCamScript.StressUp (weaponSwitch.equippedWeaponGunScr.stress);
-				}
+		if (canShoot && weaponSwitch.equippedWeapon != null) {
+			if ((weaponSwitch.equippedWeapon.automatic && Input.GetButton ("Fire1")) || Input.GetButtonDown ("Fire1")) {
+				anim.SetTrigger ("shoots");
+				ShootFunction();
+				mainCamScript.StressUp (weaponSwitch.equippedWeapon.stress);
+
 			}
 		}
 		//WeaponSwitch
 		if (Input.GetButtonDown ("Fire2")) {
-			if (weaponSwitch.equippedWeapon == weaponSwitch.defaultWeapon) {
+			if (weaponSwitch.equippedWeaponObject == weaponSwitch.defaultWeaponObject) {
 				weaponSwitch.PickUpWeapon ();
 			} else {
 				GameObject droppedWeapon;
@@ -175,6 +172,17 @@ public class Player : Unit {
 	}
 	}
 
+	private void ShootFunction ()
+	{
+		weaponSwitch.equippedWeapon.Shoot (bulletStart.transform.position, aiming.aimPos);
+		canShoot = false;
+		Invoke("CanShootAgain", 1 / weaponSwitch.equippedWeapon.fireRate);
+	}
+
+	private void CanShootAgain ()
+	{
+		canShoot = true;
+	}
 
 	void Animate ()
 	{

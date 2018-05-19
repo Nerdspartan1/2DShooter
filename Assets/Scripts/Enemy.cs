@@ -9,8 +9,8 @@ public class Enemy : Unit {
 	protected Player player;
 
 	[HideInInspector]
-	public bool targetInSightInPreviousFrame = false, targetInSight = false, targetHeard = false;
-
+	public bool targetInSightInPreviousFrame = false, targetHeard = false;
+	public bool targetInSight = false;
 	protected float distanceToTarget;
 	protected bool lostSightOftarget = false;
 
@@ -24,9 +24,9 @@ public class Enemy : Unit {
 
 	public bool hasInfiniteAmmo = false;
 
-	public GameObject gun;
-	[Range(1,3)]public int gunTier=1;
-	private Gun gunScr;
+	public GameObject weaponObject;
+	[Range(0,3)]public int gunTier=1;
+	private Weapon weapon;
 	public GameObject gunHolder;
 	protected bool canShoot = true;
 	public GameObject bulletStart;
@@ -39,47 +39,48 @@ public class Enemy : Unit {
 	protected NavMeshAgent nav;
 	protected GameManager gameManager;
 
-
-
-
 	public LayerMask cantSeeThrough;
-
-
 
 
 
 	new protected void Start ()
 	{
-		base.Start();
+		base.Start ();
 		gameManager = GameManager.Instance;
-		tag = "Enemy";
-		target = GameObject.Find ("Player").transform.Find("ShootingPivot").gameObject;
+		target = GameObject.Find ("Player").transform.Find ("ShootingPivot").gameObject;
 		anim = GetComponent<Animator> ();
-		aiming = GetComponent<AimAt> ();
-		if (aiming != null)
-			aiming.enabled = true;
-
-		aiming.planePos = Vector3.Project(bulletStart.transform.position,Vector3.up);
-
-		if (aiming.laserSight != null)
-			laser = aiming.laserSight.GetComponent<LineRenderer> ();
-
 		nav = GetComponent<NavMeshAgent> ();
 		aiPath = GetComponent<AIPath> ();
-
-		if (gun == null) {
-			gun = gameManager.GetRandomWeapon(gunTier);
-		}
-		GameObject g = Instantiate (gun);
-		g.name = gun.name;
-		EquipWeapon (g);
-		if(hasAimingAnimation)
-			SetAnimLayer(g.GetComponent<Gun>().holdingPose);
+		aiming = GetComponent<AimAt> ();
 
 		if (target != null) {
-			aiming.target = target;
 			player = target.GetComponentInParent<Player>();
 		}
+		if (aiming != null) {
+			if(target != null) aiming.target = target;
+			aiming.enabled = true;
+			aiming.planePos = Vector3.Project (bulletStart.transform.position, Vector3.up);
+			if (aiming.laserSight != null)
+				laser = aiming.laserSight.GetComponent<LineRenderer> ();
+		}
+
+
+		if (weaponObject == null) {
+			if(gunTier >0)
+				weaponObject = gameManager.GetRandomWeapon (gunTier);
+			else {
+				RunAway ();
+				SetAnimLayer (0);
+			}
+		} 
+		if (weaponObject != null) {
+			GameObject w = Instantiate (weaponObject);
+			w.name = weaponObject.name;
+			EquipWeapon (w);
+			if (hasAimingAnimation)
+				SetAnimLayer (w.GetComponent<Gun> ().holdingPose);
+		}
+
 
 		eyes = transform.Find("Eyes").gameObject;
 		if(eyes == null) eyes = gameObject;
@@ -96,24 +97,27 @@ public class Enemy : Unit {
 			targetInSight = !Physics.Linecast (eyes.transform.position, target.transform.position, out hit, cantSeeThrough)
 			&& distanceToTarget < sightRange;
 
-			if(hasAimingAnimation)
-				anim.SetBool ("aiming", targetInSight);
-			aiming.looksAtTarget = targetInSight; //Ne regarde pas le joueur si il n'est pas en vue
+			if (weaponObject != null) {
+				if (hasAimingAnimation)
+					anim.SetBool ("aiming", targetInSight);
+					if(aiming !=null)
+					aiming.looksAtTarget = targetInSight; //Ne regarde pas le joueur si il n'est pas en vue
 
-			if (!targetInSight) {
-				StopCoroutine(ReactionCoroutine());
+				if (!targetInSight) {
+					StopCoroutine (ReactionCoroutine ());
+				}
+				if (Spottedtarget ()) {
+					StartCoroutine (ReactionCoroutine ());
+				}
+				ShootMethod ();
 			}
-			if (Spottedtarget ()) {
-				StartCoroutine(ReactionCoroutine());
-			}
-
-
-			ShootMethod();
 
 			if (player.IsDead ()) {
 				target=null;
 			}
+
 		} else {
+			if(aiming != null)
 			aiming.enabled = false;
 		}
 
@@ -126,23 +130,38 @@ public class Enemy : Unit {
 		
 	}
 
-	public virtual void ShootMethod(){
-		if (targetInSight && distanceToTarget < shootRange) {
+	public virtual void ShootMethod ()
+	{
+		if (targetInSight && distanceToTarget < shootRange && aiPath.behaviour == Behaviour.HOSTILE) {
 			if (canShoot) {
-				StartCoroutine(ShootCoroutine());
+				if (!ShootFunction ()) {
+					RunAway();
+				}
 			}
 			
 		}
 	}
 
 
-	private IEnumerator ShootCoroutine ()
+	private bool ShootFunction ()
 	{
-		gunScr.Shoot (bulletStart.transform.position, aiming.trueAimPos, !hasInfiniteAmmo);
+		
 		canShoot = false;
-		player.ReplenishBulletTime (gunScr.bulletTimeReplenishFactor);
-		yield return new WaitForSeconds ((gunScr.automatic ? 1 : 1.5f) / gunScr.fireRate);
+		player.ReplenishBulletTime (weapon.bulletTimeReplenishFactor);
+		Invoke("CanShootAgain", (weapon.automatic ? 1 : 1.5f) / weapon.fireRate);
+		return weapon.Shoot (bulletStart.transform.position, aiming.trueAimPos, !hasInfiniteAmmo);
+
+	}
+
+	private void CanShootAgain ()
+	{
 		canShoot = true;
+	}
+
+	public void RunAway ()
+	{
+		aiPath.behaviour = Behaviour.FLEE;
+		if(aiming != null) aiming.looksAtTarget = false;
 	}
 
 	protected virtual IEnumerator ReactionCoroutine ()
@@ -152,16 +171,21 @@ public class Enemy : Unit {
 		canShoot = true;
 	}
 
-	public override void Death(Vector3 knockback){
-		base.Death(knockback);
-		aiming.enabled=false;
+	public override void Death (Vector3 knockback)
+	{
+		base.Death (knockback);
+		if(aiming!=null) aiming.enabled = false;
 		nav.enabled = false;
 		aiPath.enabled = false;
-		gun.layer =LayerMask.NameToLayer("Prop");
-		gun.transform.parent = null;
-		gun.GetComponent<Rigidbody>().isKinematic=false;
+		if (weaponObject != null) {
+			weaponObject.layer = LayerMask.NameToLayer ("Prop");
+			weaponObject.transform.parent = null;
+			weaponObject.GetComponent<Rigidbody> ().isKinematic = false;
+		}
+		if(tag == "Enemy")
+			gameManager.enemiesAlive--;
 		tag = "Untagged";
-		gameManager.enemiesAlive--;
+
 		enabled = false;
 	}
 
@@ -195,16 +219,16 @@ public class Enemy : Unit {
 		return v;
 	}
 
-	public void EquipWeapon (GameObject g)
+	public void EquipWeapon (GameObject w)
 	{
-		g.transform.position = gunHolder.transform.position;
-		g.transform.rotation = gunHolder.transform.rotation;
-		g.transform.SetParent(gunHolder.transform);
-		gunScr = g.GetComponent<Gun>();
-		gunScr.SetOwner(nav);
-		g.GetComponent<Rigidbody>().isKinematic = true;
-		Unit.changeLayer(g.transform,LayerMask.NameToLayer("Default"));
-		gun = g;
+		w.transform.position = gunHolder.transform.position;
+		w.transform.rotation = gunHolder.transform.rotation;
+		w.transform.SetParent(gunHolder.transform);
+		weapon = w.GetComponent<Weapon>();
+		weapon.SetOwner(nav);
+		w.GetComponent<Rigidbody>().isKinematic = true;
+		Unit.changeLayer(w.transform,LayerMask.NameToLayer("Default"));
+		weaponObject = w;
 
 	}
 

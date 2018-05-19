@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum Behaviour {HOSTILE, FLEE}
+
+
 public class AIPath : MonoBehaviour {
 
 	public GameObject target;
 	private NavMeshAgent nav;
 	private Animator anim;
 	private Enemy enemy;
-	public float range = 20f;
+	public float shootRange = 4f;
+	public float fleeRange = 20f;
 	public float marge= 2f;
 	private bool inRange = false;
 
-	private Vector3 goTo;
+	public Behaviour behaviour = Behaviour.HOSTILE;
+
+	public Vector3 goTo;
 
 
 
@@ -29,17 +35,27 @@ public class AIPath : MonoBehaviour {
 	{
 		Vector3 u = transform.position - target.transform.position;
 		float distance = u.magnitude;
-		inRange = distance <= range + marge && distance >= range - marge;
-		if (enemy.targetInSight) {
-			if(!inRange)
-				goTo= target.transform.position + range * u.normalized;
-		} else if (enemy.LostSightOftarget () || enemy.Heardtarget()) {
-			goTo= target.transform.position;
+		switch (behaviour) {
+		case Behaviour.HOSTILE:
+			{
+				inRange = distance <= shootRange + marge && distance >= shootRange - marge;
+				if (enemy.targetInSight) {
+					if (!inRange)
+						goTo = target.transform.position + shootRange * u.normalized;
+				} else if (enemy.LostSightOftarget () || enemy.Heardtarget ()) {
+					goTo = target.transform.position;
+				}
+				break;
+			}
+		case Behaviour.FLEE:
+			{
+				if (enemy.targetInSight) {
+					goTo = target.transform.position + fleeRange * u.normalized;
+				}
+				break;
+			}
+
 		}
-
-
-
-
 
 		transform.LookAt(transform.position + nav.velocity);
 		nav.destination = goTo;

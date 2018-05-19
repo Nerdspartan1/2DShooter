@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Levels/Scenes/RobotScene.unity
+- path: Assets/Levels/Scenes/Level4.1.unity
   isLoaded: 1
   isActive: 1
